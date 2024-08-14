@@ -1,0 +1,22 @@
+html{
+    --color-black:#0E111B;
+    --color-white:#FFF;
+    --colkor-white-50:rgba(255,255,255,0.5);
+    --colkor-white-30:rgba(255,255,255,0.3);
+    --colkor-white-20:rgba(255,255,255,0.2);
+    --colkor-white-10:rgba(255,255,255,0.1);
+    --colkor-white-5:rgba(255,255,255,0.05);
+    --color-primary:#FDC000;
+    --color-hover:#F86A05;
+    --color-area:#1C212E; 
+
+
+}
+
+
+body {
+    background-color: var(--color-black);
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.4;
+    color:var(--color-white);
+}
