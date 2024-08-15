@@ -69,7 +69,7 @@ export class Component {
           // Setter
           set: val => {
             state[key] = val
-            console.log(state[key])
+            
             if (Array.isArray(this.observers[key])) { // 호출할 콜백이 있는 경우!
               this.observers[key].forEach(observer => observer(val))
             }
