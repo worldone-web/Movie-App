@@ -54,7 +54,23 @@ body {
     color:var(--color-white);
 }
 
+.the-loader{
+    width: 30px;
+    height: 30px;
+    margin: 30px auto;
+    border: 4px var(--color-primary);
+    border-top-color: transparent;
+    border-radius: 50%;
+    animation: loader 1s infinite linear;
+}
 
+.the-loder.hide{
+    display: none;
+}
+@keyframes loader{
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(360deg);}
+}
 
 
 .headline{
@@ -108,6 +124,12 @@ body {
     padding:20px;
     border-radius: 4px;
     background-color: var(--color-area);
+}
+
+.movie-list .message{
+    color:var(--color-primary);
+    font-size:20px;
+    text-align: center;
 }
 
 .movie-list .movies{

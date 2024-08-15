@@ -14,10 +14,7 @@ export default class MovieListMore extends Component{
             pageMax > page 
                 ? this.el.classList.remove('hide')
                 : this.el.classList.add('hide')
-            
         })
-
-        
     }
 
     render(){
@@ -25,7 +22,8 @@ export default class MovieListMore extends Component{
         this.el.textContent='View more..'
     
         this.el.addEventListener('click',async ()=>{
-            const res = await searchMovies(movieStore.state.page+1)
+            this.el.classList.add('hide')
+            await searchMovies(movieStore.state.page+1)
         })
     }
 }
