@@ -4,8 +4,10 @@ import movieStore, {searchMovies} from '../store/movie'
 export default class Search extends Component{
     render(){
         this.el.classList.add('search')
-        this.el.innerHTML=`
-            <input placeholedr="Enter the movie title to search" />
+        this.el.innerHTML=/*html */`
+            <input 
+                value="${movieStore.state.searchText}"
+                placeholedr="Enter the movie title to search" />
             <button class="btn btn-primary">
                 Search
             </button>
