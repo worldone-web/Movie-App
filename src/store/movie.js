@@ -5,6 +5,7 @@ const store= new Store({
     page:1,
     pageMax:1,
     movies:[],
+    movie:{},
     loading:false,
     message: 'Search for the movie tite'
 })
@@ -35,5 +36,14 @@ export const searchMovies= async (page) => {
         console.log('serachMovies error',error)
     }finally{
         store.state.loading=false //로딩 애니메이션 종료
+    }
+}
+
+export const getMovieDetails = async id =>{
+    try{
+        const res = await fetch(`https://www.omdbapi.com?apikey=7c7b7a07&i=${id}&plot=full`)
+        store.state.movie = await res.json()
+    }catch(error){
+        console.log('getMovieDetails error',error)
     }
 }
