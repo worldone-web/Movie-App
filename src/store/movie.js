@@ -20,7 +20,13 @@ export const searchMovies= async (page) => {
         store.state.message=''
     }
     try {
-        const res = await fetch(`https://www.omdbapi.com?apikey=7c7b7a07&s=${store.state.searchText}&page=${store.state.page}`)
+        const res = await fetch('/api/movie',{
+            method:'POST',
+            body: JSON.stringify({ // body로 객체를 보내기 위해서 문자화
+                title:store.state.searchText,
+                page
+            })
+        })
         const { Search, totalResults, Response, Error } = await res.json()
         if (Response === 'True') {
             store.state.movies = [
@@ -41,7 +47,12 @@ export const searchMovies= async (page) => {
 
 export const getMovieDetails = async id =>{
     try{
-        const res = await fetch(`https://www.omdbapi.com?apikey=7c7b7a07&i=${id}&plot=full`)
+        const res = await fetch('/api/movie',{
+            method: 'POST',
+            body: JSON.stringify({
+                id
+            })
+        })
         store.state.movie = await res.json()
     }catch(error){
         console.log('getMovieDetails error',error)
