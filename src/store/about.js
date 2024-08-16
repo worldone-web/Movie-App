@@ -1,5 +1,5 @@
 import { Store } from "../core/heropy";
-import image from "../images/githubMe.jpg"
+import image from "../images/githubMe.JPG"
 
 export default new Store({
     photo: image,
